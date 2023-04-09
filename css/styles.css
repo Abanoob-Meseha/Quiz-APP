@@ -1,0 +1,114 @@
+/* import used font  */
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk&display=swap');
+
+body{
+    background-color: #202124;
+    font-family: 'Schibsted Grotesk', sans-serif;
+    color: white;
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+}
+.container{
+    text-align: center;
+    width: fit-content;
+    padding: 1%;
+    margin: 2% auto;
+    background: rgba(102, 102, 102, 0.219);
+    box-shadow: 0 8px 32px 0 rgba(189, 42, 42, 0.37);
+    backdrop-filter: blur( 10.5px );
+    -webkit-backdrop-filter: blur( 10.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.container img{
+    width: 60vw;
+    height: 50vh;
+}
+.inputForm{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+.inputForm select{
+    width: 15vw;
+    height: 7vh;
+    border-radius: 15px;
+    font-size: x-large;
+    font-weight: bolder;
+    color: #ff1818;
+    text-align: center;
+}
+
+.inputBlock{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1vh;
+}
+.inputBlock label{
+    font-size: larger;
+
+}
+
+.btn {
+	box-shadow: 3px 4px 0px 0px #ff1717f3;
+	background:linear-gradient(to bottom, #ff3333b9 5%, #FF3333 100%);
+	background-color:#FF3333;
+	border-radius:5px;
+	border:1px solid #ff2323;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:45px;
+	font-weight:bold;
+	padding:12px 44px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #FF3333;
+    margin-top: 4vh;
+}
+.btn:hover {
+	background:linear-gradient(to bottom, #ff1b1b 5%, #FF3333 100%);
+	background-color:#ff1818;
+}
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+/* footer */
+footer{
+    width: 100%;
+    color: #ff2323;
+    font-size: medium;
+    margin-top: 5vh;
+}
+
+@media screen and (max-width:650px) {
+    .container{
+        margin: 2% auto;
+        height: 95vh;
+    }
+    .container img{
+        width: 90vw;
+        height: 50vh;
+    }
+    .btn{
+        font-size: 35px;
+    }
+    .inputForm{
+        gap: 3vw;
+    }
+    .inputForm select{
+        width: 27vw;
+        height: 7vh;
+        border-radius: 15px;
+        font-size: large;
+        font-weight: bolder;
+        color: #ff1818;
+        text-align: center;
+    }
+    
+}
