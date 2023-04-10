@@ -12,9 +12,11 @@ body{
 .container{
     text-align: center;
     width: fit-content;
+    max-width: 95vw;
+    min-width: 70vw;
     padding: 1%;
     margin: 2% auto;
-    background: rgba(102, 102, 102, 0.219);
+    background: rgba(0, 0, 0, 0.219);
     box-shadow: 0 8px 32px 0 rgba(189, 42, 42, 0.37);
     backdrop-filter: blur( 10.5px );
     -webkit-backdrop-filter: blur( 10.5px );
@@ -69,6 +71,10 @@ body{
 	text-shadow:0px 1px 0px #FF3333;
     margin-top: 4vh;
 }
+.loaderImg{
+    width: 20px;
+    height: 20px;
+}
 .btn:hover {
 	background:linear-gradient(to bottom, #ff1b1b 5%, #FF3333 100%);
 	background-color:#ff1818;
@@ -85,6 +91,45 @@ footer{
     font-size: medium;
     margin-top: 5vh;
 }
+
+/* question page */
+.Qindex{
+    border: 5px solid white;
+    padding: 1% 2%;
+    width: fit-content;
+    margin: 0% auto;
+    border-radius: 15px;
+    background-color: #FF3333;
+}
+.answers{
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin: 0% auto;
+    
+}
+.answers .answer{
+    background: rgba( 255, 255, 255, 0.6 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    text-align: left;
+    margin-top: 2vh;
+    padding: 1%;
+    font-size: xx-large;
+    color: black;
+}
+.answer input{
+    width: 4vw;
+    height: 4vh;
+}
+.Qcount{
+    margin-left: 2vw;
+    font-size: medium;
+}
+
 
 @media screen and (max-width:650px) {
     .container{
