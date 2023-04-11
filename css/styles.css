@@ -23,7 +23,7 @@ body{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.container img{
+.container .banner_img{
     width: 60vw;
     height: 50vh;
 }
@@ -79,7 +79,7 @@ body{
 }
 .loaderImg{
     border: 10px solid #f3f3f3; /* Light grey */
-    border-top: 10px solid #ff1b1b; /* Blue */
+    border-top: 10px solid #ff1b1b; /* red */
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -155,14 +155,23 @@ footer{
     margin-left: 2vw;
     font-size: medium;
 }
+.finish_section{
+    text-align: center;
+    padding: 0vh 3vh;
+}
+.finish_img{
+    width: 80vw;
+    height: 50vh;
+}
 
 
 @media screen and (max-width:650px) {
     .container{
         margin: 2% auto;
-        height: 95vh;
+        height: fit-content;
+        padding: 5vh 2vw;
     }
-    .container img{
+    .container .banner_img{
         width: 90vw;
         height: 50vh;
     }
@@ -181,5 +190,24 @@ footer{
         color: #ff1818;
         text-align: center;
     }
-    
+    .answers{
+        width: 95vw;
+        height: fit-content;
+        
+    }
+    .answers .answer{
+        height: fit-content;
+    }
+    .loaderImg{
+        width: 20px;
+        height: 20px;
+    }
+    .SqueezeButton_section{
+        gap: 4vw;
+        align-items: center;
+    }
+    .finish_img{
+        width: 90vw;
+        height: 30vh;
+    }
 }
