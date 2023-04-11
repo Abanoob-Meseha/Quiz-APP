@@ -2,6 +2,7 @@
  const CategoryInput = document.querySelector('#Category')
  const RegionInput = document.querySelector('#Region')
  const DifficultyInput = document.querySelector('#Difficulty')
+ const SqueezeButton_section = document.querySelector('.SqueezeButton_section')
  const questionContainer = document.querySelector('.container')
  const submit_section = document.querySelector('.submit_section')
  const QsubmitButton = document.querySelector('#submit')
@@ -9,12 +10,37 @@
  let questionsArray = []
  let questionsHtml = [] 
  let global_Qcount_index = 0
+
+ const inputCheckFunc = ()=>{
+    //  to make radio input checked when its parent div is clicked
+    if(document.querySelector('.answer') !== null){
+        const answers = document.querySelectorAll('.answer');
+        for(let answer of answers){
+            const radio = answer.querySelector('input[type="radio"]');
+            answer.addEventListener('click', () => {
+            radio.checked = true;
+            });
+            if(radio.checked === true){
+                answer.style.background ="rgba(255, 37, 37, 0.767)"
+                answer.style.border = "3px solid rgb(255, 255, 255)"
+                answer.style.color = "white"
+            }
+            else{
+                answer.style.background =""
+                answer.style.border = ""
+                answer.style.color = ""
+            }
+        }
+    }
+ }
+
+setInterval(inputCheckFunc, 100);
  submit_section.style.display = "none";
 
  const generateQuestions = async () => {
-    try {
+    
         console.log('...loading')
-        generateButton.innerHTML += `<img src="assets/images/loader.gif" class="loaderImg" alt="loader-gif">`
+        SqueezeButton_section.innerHTML += `<div class="loaderImg"></div>`
         let CategoryValue = CategoryInput.value 
         let RegionValue = RegionInput.value
         let DifficultyValue = DifficultyInput.value
@@ -36,20 +62,20 @@
                             <h4 style="margin:0%">Answers</h4>
                             <div class = "answers">
                                 <div class="answer">
-                                <input type="radio" name="a" id="a" value="Egypt">
-                                <label for="a:">a) ${Answers[0]}</label>
+                                    <input type="radio" name="answer" id="a" value="Egypt">
+                                    <label for="a:">a) ${Answers[0]}</label>
                                 </div>
                                 <div class="answer">
-                                <input type="radio" name="b" id="b" value="hfh">
-                                <label for="b:">b) ${Answers[1]}</label>
+                                    <input type="radio" name="answer" id="b" value="hfh">
+                                    <label for="b:">b) ${Answers[1]}</label>
                                 </div>
                                 <div class="answer">
-                                <input type="radio" name="c" id="c" value="Egykdjfpt">
-                                <label for="c:">c) ${Answers[2]}</label>
+                                    <input type="radio" name="answer" id="c" value="Egykdjfpt">
+                                    <label for="c:">c) ${Answers[2]}</label>
                                 </div>
                                 <div class="answer">
-                                <input type="radio" name="d" id="d" value="Egykdjfpt">
-                                <label for="d:">d) ${Answers[3]}</label>
+                                    <input type="radio" name="answer" id="d" value="Egykdjfpt">
+                                    <label for="d:">d) ${Answers[3]}</label>
                                 </div>
                             </div>
                         </div>
@@ -62,13 +88,10 @@
             submit_section.style.display = "";
             Qcount.innerHTML = `${(global_Qcount_index + 1)} / 10`
             
+        }).catch((err)=>{
+            console.log("problem loading question ..please try again!!")
+            console.log(err)
         })
-
-        
-    } catch (error) {
-        console.log("problem generating the Questions!!")
-        console.log(error)
-    }
  }
 
  const questionSubmit = ()=>{
@@ -82,7 +105,6 @@
         Qcount.innerHTML = `${(global_Qcount_index + 1)} / 10`
 
     }
-    
 }
 generateButton.addEventListener('click' , generateQuestions);    
 QsubmitButton.addEventListener('click' , questionSubmit);
